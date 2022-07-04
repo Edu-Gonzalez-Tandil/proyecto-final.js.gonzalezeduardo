@@ -1,0 +1,23 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    color: green;
+}
+
+.registro_social{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 100px;
+}
+
+.costo_anual{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 100px;
+}
