@@ -2,7 +2,6 @@ let nombre = prompt("Ingrese su nombre: ");
 let apellido = prompt("Ingrese su apellido: ");
 let jugador = prompt("Ingrese si es jugador SI/NO");
 let edad = parseInt(prompt("Ingrese su edad. "));
-let jugadores = ["Roman Riquelme", "Martin Palermo", "Clemente Rodriguez", "Juan Musso", "Licha Lopez"];
 let cuota_activo = 4950;
 let cuota_cadete = 3100;
 let cuota_menores = 2700;
@@ -56,26 +55,6 @@ function costo_deportivo(edad) {
     }
 }
 
-function tercer_tiempo(jugador) {
-
-    if (jugador && (edad > 1) && (edad < 18)){
-        return costo_tercer_tiempo;
-    }
-
-    else { return "No posee";}
-}
-
-function existe_jugador() {
-
-    for (index=0; index < jugadores.length; index++) {
-        if ((nombre + " " + apellido) == jugadores[index]) {
-            return true;
-        }
-    }
-    return false;
-
-}
-
 console.log("Nombre: ", nombre);
 console.log("Apellido: ", apellido)
 console.log("Jugador: ", jugador);
@@ -86,6 +65,4 @@ console.log("Cuota social: ", costo_social(edad));
 console.log("Cuota deportiva: " , costo_deportivo(edad));
 console.log("Costo total: " , costo_social(edad) + costo_deportivo(edad));
 console.log("Costo tercer tiempo (Mensual): " , tercer_tiempo(jugador == 'SI'));
-
-console.log("Existe el jugador en el sistema? ", existe_jugador())
 
