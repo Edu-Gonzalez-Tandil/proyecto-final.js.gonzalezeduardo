@@ -1,3 +1,4 @@
+//Datos fijos de los costos del club y sus categorias
 let cuota_activo = 4950;
 let cuota_cadete = 3100;
 let cuota_menores = 2700;
@@ -8,53 +9,80 @@ let soc_activo = "SOCIO ACTIVO";
 let soc_cadete = "SOCIO CADETE MAYOR";
 let soc_menor = "SOCIO CADETE MENOR";
 
+//Simulo base de datos del sistema
 
-let menu = "BIENVENIDO AL CLUB LOS CARDOS\n 1 - QUIERO SER SOCIO\n 2 - YA FUI SOCIO\n 3 - QUIERO IR AL SHOP\n 0 - QUIERO SALIR\n";
+
+
+const base_datos = [
+
+    {
+        Nombre: "Florencia",
+        Apellido: "Roveda",
+        ndoc: 30880382
+    },
+    {
+        Nombre: "Sofia",
+        Apellido: "Gonzalez Roveda",
+        ndoc: 57970135
+    },
+    {
+        Nombre: "Eduardo",
+        Apellido: "Gonzalez",
+        ndoc: 36559841
+    }
+
+]
+
+//Agrego socio por metodo PUSH
+
+let array = base_datos.push(
+    {
+        Nombre: "Pablo",
+        Apellido: "Roveda",
+        ndoc:33725831
+    }
+    );
+
+console.log(base_datos);
+
+let menu = "BIENVENIDO AL CLUB LOS CARDOS\n 1 - QUIERO SER SOCIO\n 2 - YA FUI SOCIO\n 3 - QUIERO SABER SI YA FUI SOCIO\n 0 - QUIERO SALIR\n";
 let option = prompt(menu);
 
-function quiero_ser_socio(){
+function consultar_socio(base_datos) {
+    
+    return base_datos.ndoc == 36559841
+}
+
+let resultado_busqueda = base_datos.find(consultar_socio);
+console.log ("El DNI ingresado ya esta registrado en nuestra base de datos" , resultado_busqueda);
+
+
+function tomar_datos(){
+
+    let nombre = document.getElementById("nombre");
+    let apellido = document.getElementById("apellido");
+    let dni = document.getElementById("DNI")
+    let edad = document.getElementById("edad");
+    let jugador = document.getElementById("select_jugador");
+    let obra_social = document.getElementById("obra_social");
+
+    console.log("Nombre: " , nombre.value);
+    console.log("Apellido: " , apellido.value);
+    console.log("DNI: " , dni.value);
+    console.log("Edad: " , edad.value);
+    console.log("Jugador: ", jugador.value);
+    console.log("Obra social: " , obra_social.value);
+    console.log("Categoria social: ", categoria_social(edad.value));
+    console.log("Cuota social: " , costo_social(edad.value));
+    console.log("Cuota deportiva: " , costo_deportivo(edad.value));
+
+}
+
+
+
+function quiero_ser_socio() {
 
     console.log("COMPLETA EL FORMULARIO CON TUS DATOS:");
-
-  
-    class Socio {
-        constructor(nombre, apellido, jugador, edad) {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.jugador = jugador;
-            this.edad = edad;
-        }
-    }
-
-    let lista_socio = [];
-
-    for (let i = 0; i < 3; i++) {
-
-        let nombre = prompt("Ingrese su nombre:");
-        let apellido = prompt("Ingrese su apellido:");
-        let jugador = prompt("Ingrese SI/NO: ");
-        let edad = prompt("Ingrese su edad:");
-
-        let nuevo_socio = new Socio(nombre, apellido, jugador, edad);
-
-        lista_socio.push(nuevo_socio);
-
-    }
-
-    for (let socio of lista_socio) {
-
-        console.log("Nombre:", socio.nombre);
-        console.log("Apellido:", socio.apellido);
-        console.log("Jugador:", socio.jugador)
-        console.log("Edad: ", socio.edad);
-        console.log("Categoria: ", categoria_social(socio.edad));
-        console.log("Cuota social: ", costo_social(socio.edad));
-        console.log("Cuota deportiva: ", costo_deportivo(socio.edad));
-        console.log("Costo total: ", costo_social(socio.edad) + costo_deportivo(socio.edad));
-        console.log("<--------------------------------------->");
-    }
-
-
 }
 
 function categoria_social(edad) {
@@ -100,41 +128,44 @@ function costo_deportivo(edad) {
     }
 }
 
-function ya_fui_socio(){
+function ya_fui_socio() {
     console.log("DATE EL ALTA EN LA SECRETARIA DEL CLUB: LUN A VIE 15.00 A 19.30 HS");
 }
 
-function shop(){
-    console.log("HACE TU PEDIDO");
-}
 
-while (true) {
+
+while (true) 
+{
     let option = parseInt(prompt(menu));
-    switch (option) {
-        case 1:
+    switch (option)
+     {
+       
+             case 1:
             quiero_ser_socio();
+            alert("COMPLETA EL REGISTRO")
             break;
-
-        
-
-        case 2:
+       
+            case 2:
             ya_fui_socio();
             alert("DATE EL ALTA EN LA SECRETARIA DEL CLUB: LUN A VIE 15.00 A 19.30 HS");
             break;
+       
+            case 3:
+            consultar_socio(resultado_busqueda);
+            console.log ("El DNI ingresado ya esta registrado en nuestra base de datos" , resultado_busqueda);
 
-        case 3:
-            shop();
-            alert("SHOP EN CREACION")
             break;
-
-        case 0:
+       
+            case 0:
             alert("Gracias por acceder a nuestra Web, hasta pronto!");
             break;
-
-        default:
+        
+            default:
             break;
     }
-    if (option == 0) {
+
+    if (option == 0) 
+    {
         break;
-    }
+    } 
 }

@@ -1,4 +1,4 @@
-const categorias = [
+const Productos = [
 
     {
         id: 1,
@@ -18,11 +18,15 @@ const categorias = [
 
 ]
 
-let menu = "Bienvenido a la tienda virtual del VERDE\n 1 - selecciona un producto\n 2 - mostrar carrito\n 3 - eliminar producto\n 0 - salir\n";
+let menu = "BIENVENIDO AL CLUB LOS CARDOS\n 1 - selecciona un producto\n 2 - mostrar carrito\n 3 - eliminar producto\n 0 - salir\n";
 
 function añadir_producto(){
    
     console.log("Se agrega el producto");
+    let list = '';
+    for (const elemnt of Productos )
+    let menu = "Bienvenido a la tienda virtual del VERDE\n 1 - selecciona un producto\n 2 - mostrar carrito\n 3 - eliminar producto\n 0 - salir\n";
+
 
 }
 

@@ -34,20 +34,27 @@
         <section class="registro_social">
             <table>
                 Nombre
-                <input type="Nombre">
+                <input type="Nombre" id="nombre">
                 Apellido
-                <input type="Apellido">
+                <input type="Apellido" id ="apellido">
+                DNI
+                <input type="Apellido" id ="DNI">
                 Edad
-                <input type="Edad">
+                <input type="Edad" id="edad">
                 Jugador
-                <select name="jugador" id="">
+                <select name="jugador" id="select_jugador">
                     <option value="">SI</option>
                     <option value="">NO</option>
                 </select>
+                Obra social
+                <input type="Obra social" id="obra_social">
+                <div>
+                <button onclick="tomar_datos()">ENVIAR DATOS</button>
+            </div>
             </table>
         </section>
             <section class = "costo_anual">
-                <p>CUOTA SOCIAL</p>
+                <p>CUOTA SOCIAL </p> 
                 <P>SEGURO</P>
                 <P>TERCEROS TIEMPOS</P>
                 <P>TOTAL</P>    
