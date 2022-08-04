@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
     <script src="https://kit.fontawesome.com/ce49404a95.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Registro social Los Cardos RC</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-dark bg-dark">
@@ -32,32 +35,32 @@
         </nav>
         <h1>REGISTRO SOCIAL LOS CARDOS RUGBY CLUB</h1>
         <section class="registro_social">
-            <table>
-                Nombre
-                <input type="Nombre" id="nombre">
-                Apellido
-                <input type="Apellido" id ="apellido">
-                DNI
-                <input type="Apellido" id ="DNI">
-                Edad
-                <input type="Edad" id="edad">
-                Jugador
-                <select name="jugador" id="select_jugador">
-                    <option value="">SI</option>
-                    <option value="">NO</option>
-                </select>
-                Obra social
-                <input type="Obra social" id="obra_social">
-                <div>
-                <button onclick="tomar_datos()">ENVIAR DATOS</button>
-            </div>
-            </table>
+            <form action="" id="formulario">
+                <table>
+                    Nombre
+                    <input type="Nombre" id="nombre">
+                    Apellido
+                    <input type="Apellido" id="apellido">
+                    DNI
+                    <input type="Apellido" id="DNI">
+                    Edad
+                    <input type="Edad" id="edad">
+                    Jugador
+                    <select name="jugador" id="select_jugador">
+                        <option value="">SI</option>
+                        <option value="">NO</option>
+                    </select>
+                    Obra social
+                    <input type="Obra social" id="obra_social">
+                    <button id="boton_enviar">ENVIAR DATOS</button>
+                </table>
+            </form>
         </section>
-            <section class = "costo_anual">
-                <p>CUOTA SOCIAL </p> 
-                <P>SEGURO</P>
-                <P>TERCEROS TIEMPOS</P>
-                <P>TOTAL</P>    
+        <section class="costo_anual">
+            <p>CUOTA SOCIAL </p>
+            <P>SEGURO</P>
+            <P>TERCEROS TIEMPOS</P>
+            <P>TOTAL</P>
         </section>
 
 
@@ -74,4 +77,5 @@
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

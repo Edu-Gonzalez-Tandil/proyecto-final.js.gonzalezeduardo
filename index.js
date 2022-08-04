@@ -45,9 +45,6 @@ let array = base_datos.push(
 
 console.log(base_datos);
 
-let menu = "BIENVENIDO AL CLUB LOS CARDOS\n 1 - QUIERO SER SOCIO\n 2 - YA FUI SOCIO\n 3 - QUIERO SABER SI YA FUI SOCIO\n 0 - QUIERO SALIR\n";
-let option = prompt(menu);
-
 function consultar_socio(base_datos) {
     
     return base_datos.ndoc == 36559841
@@ -57,8 +54,9 @@ let resultado_busqueda = base_datos.find(consultar_socio);
 console.log ("El DNI ingresado ya esta registrado en nuestra base de datos" , resultado_busqueda);
 
 
-function tomar_datos(){
+formulario.addEventListener("submit" , function tomar_datos(e){
 
+    e.preventDefault();
     let nombre = document.getElementById("nombre");
     let apellido = document.getElementById("apellido");
     let dni = document.getElementById("DNI")
@@ -76,14 +74,16 @@ function tomar_datos(){
     console.log("Cuota social: " , costo_social(edad.value));
     console.log("Cuota deportiva: " , costo_deportivo(edad.value));
 
-}
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Tu regristro se completo con exito! Bienvenido a la familia verde!',
+        showConfirmButton: false,
+        timer: 1500
+        
+      })
 
-
-
-function quiero_ser_socio() {
-
-    console.log("COMPLETA EL FORMULARIO CON TUS DATOS:");
-}
+})
 
 function categoria_social(edad) {
 
@@ -126,46 +126,4 @@ function costo_deportivo(edad) {
     else if (edad >= 18) {
         return " (Sin costo deportivo)";
     }
-}
-
-function ya_fui_socio() {
-    console.log("DATE EL ALTA EN LA SECRETARIA DEL CLUB: LUN A VIE 15.00 A 19.30 HS");
-}
-
-
-
-while (true) 
-{
-    let option = parseInt(prompt(menu));
-    switch (option)
-     {
-       
-             case 1:
-            quiero_ser_socio();
-            alert("COMPLETA EL REGISTRO")
-            break;
-       
-            case 2:
-            ya_fui_socio();
-            alert("DATE EL ALTA EN LA SECRETARIA DEL CLUB: LUN A VIE 15.00 A 19.30 HS");
-            break;
-       
-            case 3:
-            consultar_socio(resultado_busqueda);
-            console.log ("El DNI ingresado ya esta registrado en nuestra base de datos" , resultado_busqueda);
-
-            break;
-       
-            case 0:
-            alert("Gracias por acceder a nuestra Web, hasta pronto!");
-            break;
-        
-            default:
-            break;
-    }
-
-    if (option == 0) 
-    {
-        break;
-    } 
 }
