@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
     <script src="https://kit.fontawesome.com/ce49404a95.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Los Cardos Rugby Club</title>
+    <title>Shop Los Cardos RC</title>
+    <link rel="stylesheet" href="../styleshop.css">
+
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/index.html">
-                    <img src="../img/cardos_calco1.jpg" alt="logo" height="100" width="150">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../img/cardos_calco1.jpg" alt="imglogo" height="100" width="150">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -26,87 +30,111 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                        <a class="nav-link" href="../index.html">REGISTRO</a>
-                        <a class="nav-link" href="shop.html">SHOP</a>
+                        <a class="nav-link active" aria-current="page" href="shop.html">Home</a>
+                        <a class="nav-link" href="../index.html">SHOP</a>
                     </div>
                 </div>
         </nav>
-        <section>
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div id="contenedorPadre">
+            <div class="container" id="listaProductos">
+                <h2>Productos</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 90%;">
+                            <img src="../img/536a146c-046a-4b54-85d4-1fffe48f2e391-7bce6343d2b04e64b916142802469889-480-0.jpeg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Camiseta Oficial Rugby Adulto</h5>
+                                <p class="card-text">Talle S al XXXL</p>
+                                <span class="precio">6700$</span>
+                                <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 90%;">
+                            <img src="../img/247581_0.jpg" class="card-img-top" alt="20px">
+                            <div class="card-body">
+                                <h5 class="card-title">Short Rugby Adulto</h5>
+                                <p class="card-text">Talle S al XXXL</p>
+                                <span class="precio">$4000</span>
+                                <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 90%;">
+                            <img src="img2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Mesa</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <span class="precio">100$</span>
+                                <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 90%;">
+                            <img src="img2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Lavarropa</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <span class="precio">300$</span>
+
+                                <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 90%;">
+                            <img src="img2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">PC</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <span class="precio">500$</span>
+                                <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 90%;">
+                            <img src="img2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Libreria</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <span class="precio">200$</span>
+                                <a href="#" class="btn btn-primary botonCompra">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="card2" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+            <div class="container" id="carrito">
+                <h2>Carrito</h2>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <td>Producto</td>
+                            <td>Cantidad</td>
+                            <td>Precio</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+
             </div>
-            <div class="card3" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card4" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card5" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card6" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card7" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card8" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </section>
-        <script src="shop.js"></script>
+        </div>
     </header>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
@@ -114,6 +142,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
         crossorigin="anonymous"></script>
+
+    <script src="shop.js"></script>
 </body>
 
 </html>

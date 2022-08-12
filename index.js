@@ -10,38 +10,34 @@ let soc_cadete = "SOCIO CADETE MAYOR";
 let soc_menor = "SOCIO CADETE MENOR";
 
 //Simulo base de datos del sistema
+//Storage
 
+let base_datos = []
 
+function nuevo_registro (){
 
-const base_datos = [
+    let nombre = document.getElementById("nombre");
+    let apellido = document.getElementById("apellido");
+    let dni = document.getElementById("DNI")
+    let edad = document.getElementById("edad");
+    let jugador = document.getElementById("select_jugador");
+    let obra_social = document.getElementById("obra_social");
+    let nuevo_socio = {"Nombre": nombre.value , "Apellido": apellido.value , "DNI": dni.value , "Edad": edad.value};
 
-    {
-        Nombre: "Florencia",
-        Apellido: "Roveda",
-        ndoc: 30880382
-    },
-    {
-        Nombre: "Sofia",
-        Apellido: "Gonzalez Roveda",
-        ndoc: 57970135
-    },
-    {
-        Nombre: "Eduardo",
-        Apellido: "Gonzalez",
-        ndoc: 36559841
-    }
+    base_datos.push(nuevo_socio);
 
-]
+    let base_datosJSON = JSON.stringify(base_datos);
+    localStorage.setItem("Nuevos registros" , base_datosJSON);
 
-//Agrego socio por metodo PUSH
+    let mi_base_datos = localStorage.getItem("Nuevos registros");
+    console.log ( JSON.parse (mi_base_datos));
 
-let array = base_datos.push(
-    {
-        Nombre: "Pablo",
-        Apellido: "Roveda",
-        ndoc:33725831
-    }
-    );
+    
+
+}
+
+let boton = document.getElementById("boton_enviar");
+boton.addEventListener("click", nuevo_registro);
 
 console.log(base_datos);
 
@@ -80,7 +76,7 @@ formulario.addEventListener("submit" , function tomar_datos(e){
         title: 'Tu regristro se completo con exito! Bienvenido a la familia verde!',
         showConfirmButton: false,
         timer: 1500
-        
+
       })
 
 })
@@ -127,3 +123,24 @@ function costo_deportivo(edad) {
         return " (Sin costo deportivo)";
     }
 }
+
+
+formulario.addEventListener("submit" , function(){
+
+    let edad = document.getElementById("edad");
+    
+    costo_social(edad);
+
+    let li = document.createElement("li");
+    li.innerHTML = `<span>${costo_deportivo.value} </span>`;
+
+    li.append(li);
+
+})
+
+fetch("https://api.openweathermap.org/data/2.5/weather?q=Tandil&appid=9885ae2e08b2f82172b6ceaad0a6640d")
+    .then(response => response.json())
+    .then( data => console.log(data))
+
+
+
